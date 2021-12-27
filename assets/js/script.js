@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', (e) => {
 
+
+
   function switcherAddRemoveActiveClass({
     theClass: theClass,
     activeClass: activeClass,
@@ -12,10 +14,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
   }
 
   function switcher() {
+    let currentEvent = 0;
     document.querySelectorAll('.all-event__switcher-item').forEach((item, index) => {
       item.addEventListener('click', e => {
         // exit if we clicked on something which exists now
         if (item.classList.contains('all-event__switcher-item_active')) return
+        currentEvent = currentEvent === 0 ? 1 : 0
         
         switcherAddRemoveActiveClass({
           theClass: 'all-event__switcher-item',
@@ -37,8 +41,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
       })
     })
-
-    let currentEvent = 0;
     document.querySelectorAll('.all-event__switcher-mobile-item').forEach((item, index) => {
       item.addEventListener('click', e => {
         currentEvent = currentEvent === 0 ? 1 : 0
