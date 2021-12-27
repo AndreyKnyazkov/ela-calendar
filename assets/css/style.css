@@ -240,6 +240,10 @@ body {
   .all-event-item__info__forwhom {
     width: 180%;
   }
+  .all-event-item {
+    border: 0;
+    box-shadow: initial;
+  }
 }
 @media (max-width: 480px) {
   .all-event-item__img, .all-event-item__img img {
