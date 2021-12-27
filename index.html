@@ -11,12 +11,49 @@
   <title>ela event</title>
 </head>
 <body>
+  <style>
+    .all-event__switcher-mobile-item {
+      display: none;
+    }
+    @media (max-width: 767px) {
+      .all-event-item {
+        border: 0;
+        box-shadow: initial;
+      }
+      .all-event__switcher-mobile-item_active {
+        display: block;
+        -webkit-animation: fadein 0.8s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 0.8s; /* Firefox < 16 */
+        -ms-animation: fadein 0.8s; /* Internet Explorer */
+        -o-animation: fadein 0.8s; /* Opera < 12.1 */
+        animation: fadein 0.8s;
+        color: #6B6B6B;
+        background: rgba(42, 149, 158, 0.08);
+        border-radius: 5px;
+        font-size: 14px;
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      .all-event__title-switcher {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    
+  </style>
   <div class="all-events">
     <div class="pr-container">
       <div class="all-event">
-        <h1 class="all-event__title">
-          EVENTS
-        </h1>
+        <div class="all-event__title-switcher">
+          <h1 class="all-event__title">
+            EVENTS
+          </h1>
+          <div class="all-event__switcher-mobile">
+            <div class="all-event__switcher-mobile-item all-event__switcher-mobile-item_active">View past events</div>
+            <div class="all-event__switcher-mobile-item">View future events</div>
+          </div>
+        </div>
         <!--  -->
         <div class="all-event__switcher">
           <div class="all-event__switcher-item all-event__switcher-item_active">

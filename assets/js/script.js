@@ -29,9 +29,40 @@ window.addEventListener('DOMContentLoaded', (e) => {
           index: index
         })
 
+        switcherAddRemoveActiveClass({
+          theClass: 'all-event__switcher-mobile-item',
+          activeClass: 'all-event__switcher-mobile-item_active',
+          index: index
+        })
+
       })
-  
     })
+
+    let currentEvent = 0;
+    document.querySelectorAll('.all-event__switcher-mobile-item').forEach((item, index) => {
+      item.addEventListener('click', e => {
+        currentEvent = currentEvent === 0 ? 1 : 0
+        
+        switcherAddRemoveActiveClass({
+          theClass: 'all-event__switcher-mobile-item',
+          activeClass: 'all-event__switcher-mobile-item_active',
+          index: currentEvent
+        })
+
+        switcherAddRemoveActiveClass({
+          theClass: 'all-event__switcher-item',
+          activeClass: 'all-event__switcher-item_active',
+          index: currentEvent
+        })
+
+        switcherAddRemoveActiveClass({
+          theClass: 'all-event-item-switcher-item',
+          activeClass: 'all-event-item-switcher-item_active',
+          index: currentEvent
+        })
+      })
+    })
+
   }
 
   switcher()
