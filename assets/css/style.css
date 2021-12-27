@@ -244,7 +244,7 @@ body {
 @media (max-width: 480px) {
   .all-event-item__img, .all-event-item__img img {
     width: 100%;
-    height: 258x;
+    height: 194px;
   }
   .all-event-item__info__anothers {
     flex-direction: column;
